@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AdditionalRoutes from "mini-router-npm-example";
 import CustomErrorBoundary from "./pages/ErrorPage";
 import LoadingPage from "./pages/LoadingPage";
 import Home from "./pages/Home"; // priority load
@@ -14,6 +15,7 @@ function Router({ state, dispatch }) {
       <CustomErrorBoundary>
         <Suspense fallback={<LoadingPage/>}>
           <Switch>
+            <AdditionalRoutes/>
             <Route
               exact path={HOME}  
             >
