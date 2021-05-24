@@ -1,39 +1,34 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { useState, useEffect } from "react" //, { useState } from "react";
+import * as ROUTES from "./routes";
 
+// Uncomment to test errors.
+// throw new Error('I crashed!');
+  
+function Home() {
+  const [triggerError, setTriggerError] = useState(false)
 
-
-class Demo extends Component {
-  state = { loading: false };
-
-  handleClick = () => {
-    this.setState({ loading: !this.state.loading });
-  };
-
-  componentDidUpdate(prevProps, props) {
-    if(prevProps !== props){
-      console.log('reached')
-      if(this.state.loading){
-        throw new Error('I crashed!');
-      }
-      else {
-        console.log('no error here')
-      }
-    }
+  const handleClick = () => {
+    setTriggerError(true)
   }
-  render() {
-    return (
-     <div>
+  useEffect(() => {
+    if(triggerError){
+      throw new Error('I crashed!');
+    }
+    else {
+      console.log('no error here')
+    }
+  });
+  return (
+    <div>
       <h2>
         Home Page, will list the paths of all standard sections of this react application.
       </h2>
       <ul >
       </ul>
-      <button onClick={this.handleClick}>
+      <button onClick={handleClick}>
         Create Error
       </button>
     </div>
-    );
-  }
-}
-export default Demo
+  );
+};
+export default Home
