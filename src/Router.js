@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomErrorBoundary from "./pages/ErrorPage";
 import LoadingPage from "./pages/LoadingPage";
-import Home from "./pages/Home"; // priority load
+import Home from "./pages/Home/src/index.js"; // priority load
 import { DEBOUNCE, HOME } from "./constants/routes";
 
 // If you want a load screen. START HERE
