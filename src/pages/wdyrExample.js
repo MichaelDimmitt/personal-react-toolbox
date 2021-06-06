@@ -19,7 +19,7 @@ const BigListPureComponent = memo(({ style }) => {
 
 BigListPureComponent.displayName = "BigListPureComponent";
 
-export const whyDidYouRenderExample = () => {
+const WhyDidYouRenderExample = () => {
   const [count, setCount] = useState(0);
 
   /* use the hook instead of the const to prevent
@@ -30,6 +30,12 @@ export const whyDidYouRenderExample = () => {
 
   return (
     <div className="Main">
+      <h1>To see "why did you render in action"</h1>
+      <ol>
+        <li>use the following start command. <code>npm start --env="debug"</code></li>
+        <li>chrome dev tools {'->'} open console</li>
+        <li><strong>it fails</strong>, when using regular <code>npm start</code> command. - check for yourself!</li>
+      </ol>
       <h1>Big List (Main Demo)</h1>
       <p>
         Open the console and notice how the heavy list re-renders on every click
@@ -44,3 +50,4 @@ export const whyDidYouRenderExample = () => {
     </div>
   );
 };
+export default WhyDidYouRenderExample

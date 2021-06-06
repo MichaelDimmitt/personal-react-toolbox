@@ -11,7 +11,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* For all <code> */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: MyFancyCustomFont, monospace;
+  font-size: inherit;
+}
+
+li {
+  padding: .25rem 0px;
+}
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
 }
