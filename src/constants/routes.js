@@ -6,6 +6,7 @@
 // export {routes, keys}
 const HOME = '/';
 const DEBOUNCE = '/debounce';
+const WHY = '/why';
 export {
-  HOME, DEBOUNCE
+  HOME, DEBOUNCE, WHY
 }

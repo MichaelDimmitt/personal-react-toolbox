@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomErrorBoundary from "./pages/ErrorPage";
 import LoadingPage from "./pages/LoadingPage";
 import Home from "./pages/Home"; // priority load
-import { DEBOUNCE, HOME } from "./constants/routes";
+import WhyDidYouRenderExample from './pages/WdyrExample'
+import { DEBOUNCE, HOME, WHY } from "./constants/routes";
 
 // If you want a load screen. START HERE
 const DebounceExample = lazy(() => import("./pages/DebounceExample"));
@@ -23,6 +24,11 @@ function Router({ state, dispatch }) {
               path={DEBOUNCE} 
             >
               <DebounceExample />
+            </Route>
+            <Route
+              path={WHY}
+            >
+              <WhyDidYouRenderExample />
             </Route>
             <Route
               path={HOME}  
