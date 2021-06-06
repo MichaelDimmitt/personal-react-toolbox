@@ -1,4 +1,4 @@
-import React, { useState, memo } from "react" //, { useState } from "react";
+import React, { useState, memo, useMemo } from "react" //, { useState } from "react";
 import { times } from "lodash";
 
 const BigListPureComponent = memo(({ style }) => {
@@ -8,11 +8,11 @@ const BigListPureComponent = memo(({ style }) => {
   return (
     <div style={style}>
       <h2>BigListPureComponent</h2>
-      <div>
+      <ol start={0} style={{display: 'flex', flexWrap: 'wrap' }}>
         {times(3000).map((n) => (
-          <div key={n}>Element #{n}</div>
+          <li key={n}>Element #{n}</li>
         ))}
-      </div>
+      </ol>
     </div>
   );
 });
@@ -27,14 +27,14 @@ const WhyDidYouRenderExample = () => {
 
   //const bigListStyle = useMemo(() => ({ width: "100%" }), []);
   const bigListStyle = { width: "100%" };
-
+  const smallListItemStyle = useMemo(() => ({ margin: '.25rem' }), []);
   return (
     <div className="Main">
       <h1>To see "why did you render in action"</h1>
       <ol>
-        <li>use the following start command. <code>npm start --env="debug"</code></li>
-        <li>chrome dev tools {'->'} open console</li>
-        <li><strong>it fails</strong>, when using regular <code>npm start</code> command. - check for yourself!</li>
+        <li style={smallListItemStyle}>use the following start command. <code>npm start --env="debug"</code></li>
+        <li style={smallListItemStyle}>chrome dev tools {'->'} open console</li>
+        <li style={smallListItemStyle}><strong>it fails</strong>, when using regular <code>npm start</code> command. - check for yourself!</li>
       </ol>
       <h1>Big List (Main Demo)</h1>
       <p>
